@@ -1,0 +1,37 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  max-width: 100%; }
+
+header {
+  position: fixed;
+  width: 100%; }
+  header:before {
+    left: 0;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background: #000;
+    -webkit-transform: skew(0deg, 5deg);
+    transform: skew(0deg, 5deg); }
+  header:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background: #000;
+    -webkit-transform: skew(0deg, -5deg);
+    transform: skew(0deg, -5deg);
+    right: 0; }
+  header nav ul {
+    margin: 0; }
+    header nav ul li {
+      display: inline-block; }
+
+/*# sourceMappingURL=style.css.map */
