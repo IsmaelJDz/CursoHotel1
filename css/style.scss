@@ -29,6 +29,31 @@ html,body{
 	font-family: 'Calligraffitti', cursive;
 }
 
+.slider_container{
+	 position: fixed;
+	 overflow: hidden;
+	 top: 0;
+	 left: 0;
+	 z-index: -2;
+	 background-color: #000;
+	 .sliderContainer{
+	 	white-space: nowrap;
+	 	height: 100%;
+	 	.slide{
+	 		display: inline-block;
+	 		background-color: #fff;
+	 		margin-right: -4px;	
+	 	}
+	 }
+}
+
+.fullScreen{
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
 header{
 	position: fixed;
 	width: 100%;
