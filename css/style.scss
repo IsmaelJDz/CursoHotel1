@@ -1,3 +1,12 @@
+@each $font-face in 'Bebas-Neue','Socialico'{
+	@font-face{
+		font-family: $font-face;
+		font-style: normal;
+		font-weight: normal;
+		src:url('../font/#{$font-face}.eot');
+		src:url('../font/#{$font-face}.otf'),url('../font/#{$font-face}.ttf');
+	}
+}
 @mixin efectoEncabezado($grados,$color : 'red'){
 		content:"";
 		position: absolute;
@@ -16,9 +25,21 @@ html,body{
 	max-width: 100%;
 }
 
+.callig{
+	font-family: 'Calligraffitti', cursive;
+}
+
 header{
 	position: fixed;
 	width: 100%;
+	top: -9em;
+	text-align: center;
+	transition:all 0.4s;
+	font-family: 'Calligraffitti', cursive;
+	&:hover{
+		top: -6em;
+	}
+
 	&:before{
 		left: 0;
 		@include efectoEncabezado(5,'#000');
@@ -29,8 +50,29 @@ header{
 	}
 	nav ul{
 		margin: 0;
+		color: #f7f7f7;
+		font-weight: bold;
+		padding-bottom: 1em;
 		li{
 			display: inline-block;
+			padding: 0 10px;
+		}
+	}
+	#logo{
+		background: #000;
+		position: relative;
+		width: 15%;
+		text-align: center;
+		min-height: 100%;
+		max-width: 100%;
+		left: 43%;
+		height: 100px;
+		top: 140px;
+		z-index: 5;
+		border-radius: 5em 0;
+		img{
+			margin-top: -20px;
+			width:100px;
 		}
 	}
 }
