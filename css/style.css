@@ -19,6 +19,31 @@ html, body {
 .callig {
   font-family: 'Calligraffitti', cursive; }
 
+.mensajePrincipal {
+  width: 40%;
+  padding-top: 10%;
+  color: #f7f7f7; }
+  .mensajePrincipal h2 {
+    color: #ededed;
+    font-size: 3em;
+    text-shadow: 0px 0px 20px #000; }
+  .mensajePrincipal .triangle {
+    width: 0;
+    height: 0;
+    opacity: 0.7;
+    border-top: 100px solid transparent;
+    border-left: 190px solid #000;
+    border-bottom: 100px solid transparent; }
+  .mensajePrincipal span {
+    line-height: 2em;
+    display: block;
+    width: 130px;
+    top: -2em;
+    left: -180px;
+    position: relative; }
+  .mensajePrincipal p {
+    font-weight: bolder; }
+
 .slider_container {
   position: fixed;
   overflow: hidden;
@@ -32,7 +57,10 @@ html, body {
     .slider_container .sliderContainer .slide {
       display: inline-block;
       background-color: #fff;
-      margin-right: -4px; }
+      margin-right: -4px;
+      vertical-align: top;
+      background-size: 100%;
+      background-position: bottom; }
 
 .fullScreen {
   width: 100%;
