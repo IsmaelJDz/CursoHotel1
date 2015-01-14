@@ -18,6 +18,9 @@
 		-webkit-transform:skew(0deg, unquote($grados+'deg'));
 		transform:skew(0deg, unquote($grados+'deg'));
 }
+
+$blue:#3e87cc;
+
 html,body{
 	height: 100%;
 	margin: 0;
@@ -29,6 +32,12 @@ html,body{
 
 .callig{
 	font-family: 'Calligraffitti', cursive;
+}
+
+.marginTop{
+	width: 80%;
+	margin: 0 auto;
+	padding-top: 7em;
 }
 
 .mensajePrincipal{
@@ -62,8 +71,18 @@ html,body{
 
 }
 
+.ribbon{
+	width: 117%;
+	height: 50px;
+	position: relative;
+	left: -25px;
+	top: 20px;
+	background: url(../img/ribbon.png);
+	background-size: 100% 100%;
+}
+
 .slider_container{
-	 position: fixed;
+	 position: absolute;
 	 overflow: hidden;
 	 top: 0;
 	 left: 0;
@@ -87,9 +106,44 @@ html,body{
 	position: relative;
 }
 
+#costos{
+	background-image: url(../img/DSCN1332.jpg);
+	background-size: 100% auto;
+	.precio{
+		position: relative;
+		width: 28%;
+		margin-left: 3.5%;
+		display: inline-block;
+		background-color: #f7f7f7;
+		vertical-align: top;
+		padding: 2em 0.5%;
+		text-align: center;
+		padding-top: 0;
+		border: 1px solid #ccc;
+		h3{
+			font-size: 2em;
+			color: $blue;
+		}
+		.costo{
+			background-color: $blue;
+			color: #fff;
+			font-size: 1.5em;
+			width: 50%;
+			margin: 0 auto;
+			padding: 0.5em;
+		}
+		.ver-mas{
+			display: block;
+			margin-top: 30px;
+			cursor: pointer;
+			color: #477FD7;
+		}
+	}
+}
+
 .centerCircle{
-	position: relative;
-	top: 70%;
+	position: absolute;
+	top: 30%;
 	z-index: 5;
 	height:100px;
 	width: 100px;
@@ -100,10 +154,12 @@ html,body{
 	text-align: center;
 	border-radius: 100px;
 	font-size: 1.8em;
-	margin: 0 auto;
+	left: 40%;
+	left: -webkit-calc(50% - 100px); 
 	border:solid 2px #d8d68c;
 
 }
+
 
 .fullScreen{
 	width: 100%;

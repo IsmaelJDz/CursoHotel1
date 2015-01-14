@@ -73,6 +73,23 @@
             </div>
         </section>
 
+        <script type="text/x-jquery-tmpl" id="precioTemplate">
+
+            <div>
+                <div class="ribbon"></div>
+                <h3>${paquete}</h3>
+                <p><strong>Contenido del paquete</strong></p>
+                <ol>
+                    {{each opciones}}
+                        <li>${opcion}</li>
+                    {{/each}}
+                </ol>
+                <p class="costo">${costo}</p>
+                <a id="regresar-ventana">Regresar</a>
+            </div>    
+
+        </script>
+
         <!--<nav class="slide_controls">
             <li>1</li>
             <li>2</li>
@@ -80,35 +97,41 @@
             <li>4</li>
         </nav>-->
 
-        <!--<section id="costo" class='fullScreen callig'>
+        <!-- 3ra parte de la navegacion -->
+
+        <section id="costos" class='fullScreen callig'>
             <div class="marginTop">
                 <div class="precio">
                     <div class="ribbon"></div>
                     <h3>Paquete básico</h3>
                     <p>Disfruta de nuestro paquete sencillo, prefecto para vacaciones improvisadas donde el presupuesto es limitado.</p>
                     <p class="costo">300</p>
-                    <a href="#" class="ver-mas"></a>
+                    <a class="ver-mas" data-number='0'>Conoce más del paquete</a>
+                </div>
+                <div class="precio">
+                    <div class="ribbon"> </div>
+                    <h3>Paquete básico</h3>
+                    <p>Disfruta de nuestro paquete sencillo, prefecto para vacaciones improvisadas donde el presupuesto es limitado.</p>
+                    <p class="costo">300</p>
+                    <a class="ver-mas" data-number='1'>Conoce más del paquete</a>
                 </div>
                 <div class="precio">
                     <div class="ribbon"></div>
                     <h3>Paquete básico</h3>
                     <p>Disfruta de nuestro paquete sencillo, prefecto para vacaciones improvisadas donde el presupuesto es limitado.</p>
                     <p class="costo">300</p>
-                    <a href="#" class="ver-mas"></a>
-                </div>
-                <div class="precio">
-                    <div class="ribbon"></div>
-                    <h3>Paquete básico</h3>
-                    <p>Disfruta de nuestro paquete sencillo, prefecto para vacaciones improvisadas donde el presupuesto es limitado.</p>
-                    <p class="costo">300</p>
-                    <a href="#" class="ver-mas"></a>
+                    <a class="ver-mas" data-number='2'>Conoce más del paquete</a>
                 </div>
             </div>
-        </section>-->
+        </section>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="//ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
         <script src="js/plugins.js"></script>
+        <script src="js/jquery.ui.core.min.js"></script>
+        <script src="js/jquery.ui.effect.min.js"></script>
+        <script src="js/jquery.flip.min.js"></script>
         <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
