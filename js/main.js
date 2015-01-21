@@ -17,9 +17,17 @@ function init(){
 	var width = $('.slider_container').width();
 
 	$('.slide').each(function(i,e){
-		var url = $(e).data('background');
-		$(e).css('width',width+'px'); 
-		$(e).css('background-image',"url("+(url+".jpg")+")"); 
+		addBackground(e,width,true);
+	});
+	$('.image_food').on('click', changeViewPort);
+	$('.image_food').each(function(i,e) {
+		addBackground (e,false);
+		if ($(e).hasClass('viewport')) return  true;
+		$(e).data('top', ((i)*100));
+		$(e).css({
+			'top': $(e).data('top')+'px',
+			
+		});
 	});
 
 
@@ -30,7 +38,31 @@ function init(){
 	intv = setInterval(handleClick,10000);
 }
 
+function changeViewPort(){
+	var e = $('.viewport');
+	e.css('top', $(e).data('top'));
+	e.removeClass('wiewport');
+	$(this).addClass('viewport');
+	$(this).css('top',0);
+}
+function addBackground(element, width, serSize){
+	if (!width) width = $('html').width();
+	if (serSize) {
+		$(element).css({
+			'width' : width,
+			'height': $('html').height()
+		});
+	}
+	var imagen = $(element).data('background');
+	$(element).css('background-image',"url("+(imagen+".jpg")+")"); 
+}
+
 function flipElement(){
+	if (flippedElement != 0){
+		$(flippedElement).revertFlip();
+		flippedElement = 0;
+	}
+	$(flippedElement).remove();
 	var padre = $(this).parent();
 	flippedElement = padre;
 	$('#precioTemplate').template("CompiledTemplate");
@@ -39,7 +71,13 @@ function flipElement(){
 		speed: 500,
 		content: $('#precioTemplate').tmpl(opcionesHoteles[$(this).data('number')]).html(),
 		//content: '<h1>HOLA</h1>',
-		color: '#f7f7f7'  
+		color: '#f7f7f7',
+		onEnd: function(){
+			$('#regresar-ventana').on('click', function(){
+				$(flippedElement).revertFlip();
+				flippedElement = 0;
+			});
+		}  
 	});
 }
 
