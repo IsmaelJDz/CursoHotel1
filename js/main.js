@@ -12,11 +12,17 @@ $(document).on('ready',function() {
 	init();
 });
 
+$(window).on('resize', init);
+window.addEventListener('orientationchange', init);
+
 function init(){
-	$.stellar({
+	if ($('html').width() > 900) {
+		$.stellar({
 		'horizontalScrolling' : false,
 		hideDistantElements: false
 	});
+
+	}
 
 	var sc = $.scrollorama({blocks: '.fullScreen', enablePin:false});
 	sc.animate('.mensajePrincipal', {delay:700,duration:350,property:'top',end:500});
@@ -115,7 +121,10 @@ function addBackground(element, width, serSize){
 		});
 	}
 	var imagen = $(element).data('background');
-	$(element).css('background-image',"url("+(imagen+".jpg")+")"); 
+	if ($('html').width() < 900) imagen = imagen+ '-movil.jpg';
+	else imagen = imagen+ '.jpg'
+	$(element).css('background-image',"url("+(imagen)+")");
+	if ($(element).height() > $(element).width()) $(element).css('background-size','auto 100%');
 }
 
 function flipElement(){
