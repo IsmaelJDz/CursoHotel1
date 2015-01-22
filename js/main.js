@@ -13,6 +13,20 @@ $(document).on('ready',function() {
 });
 
 function init(){
+	$.stellar({
+		'horizontalScrolling' : false,
+		hideDistantElements: false
+	});
+
+	var sc = $.scrollorama({blocks: '.fullScreen', enablePin:false});
+	sc.animate('.mensajePrincipal', {delay:700,duration:350,property:'top',end:500});
+	sc.animate('.mensajePrincipal', {delay:700,duration:200,property:'opacity',end:0});
+	sc.animate('.precio', {delay:400,duration:200,property:'zoom',start:0,end:1});
+	sc.animate('.centerCircle', {delay:400,duration:500,property:'opacity',start:0,end:1});
+	sc.animate('#google_canvas', {delay:400,duration:200,property:'opacity',start:0,end:1});
+	
+
+	$('#navegacionPrincipal').localScroll();
 	$('.slide_controls li').on('click', handleClick);
 	var width = $('.slider_container').width();
 

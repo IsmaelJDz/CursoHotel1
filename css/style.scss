@@ -44,6 +44,7 @@ html,body{
 	width: 40%;
 	padding-top: 10%;
 	color: #f7f7f7;
+	position: relative;
 	h2{
 		color: #ededed;
 		font-size: 3em;
@@ -149,6 +150,10 @@ html,body{
 			text-decoration: none;
 		}
 	}
+	h1{
+		color: #f7f7f7;
+		text-shadow: 0px 0px 10px rgba(0,0,0,0.8);
+	}
 	h3{
 		font-size: 1.8em;
 		line-height: 0.8em; 
@@ -234,6 +239,7 @@ html,body{
 	height: 100%;
 	padding: 0;
 	margin: 0;
+	background-attachment: fixed;
 }
 
 .half{
